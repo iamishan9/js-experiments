@@ -1,5 +1,4 @@
 
-
 var sliderUl = document.getElementById('slider-ul');
 var dots = document.getElementsByTagName('span');
 

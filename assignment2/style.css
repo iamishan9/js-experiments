@@ -1,0 +1,11 @@
+*{
+  margin: 0px;
+  padding: 0px;
+}
+
+
+.main-div {
+  width: 515px;
+  height: 515px;
+  border: 2px solid red;
+}
