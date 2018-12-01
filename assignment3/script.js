@@ -1,62 +1,42 @@
-var canv = document.getElementById("canvas");
-var canvContext = canv.getContext("2d");
+var gameContainer = document.getElementById('main-div');
+
+
+var bird = document.createElement('img');
+bird.style.left = "50px";
+var birdY = 250;
+var pressY = 0;
+var speed = 10;
+var gravity= 5;
+
+bird.src = './images/bird.png';
+
+
+var stopGame = function(){
+
+}
+
+var runGame = function (){
+
+
+  
+gameContainer.appendChild(bird);
+  birdY += gravity;
+  bird.style.top = birdY + "px";
+  document.addEventListener("keydown", moveUp);
 
 
 
-var bird = new Image();
-var backGround = new Image();
-var foreGround = new Image();
-var pipeUp = new Image();
-var pipeDown = new Image();
 
 
+function moveUp(){
+  pressY = -50;
+  birdY += pressY;
+  bird.style.top = birdY + "px";
 
-bird.src = "images/bird.png";
-backGround.src = "images/backGround.png";
-foreGround.src = "images/foreGround.png";
-pipeUp.src = "images/pipeUp.png";
-pipeDown.src = "images/pipeDown.png";
+}
 
-
-var gap = 75;
-var gravity = 1;
-var dx = 20;
-var dy = 100;
-var score = 0;
-
-
-
-document.addEventListener("keydown",moveUp);
-
-function flyUp(){
-  dy -= 25;
 }
 
 
-// var pipe = [];
-
-// pipe[0] = {
-//     x : canv.width,
-//     y : 0
-// };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+setInterval(runGame, 1000);
 
