@@ -1,14 +1,57 @@
-*{
-  margin: 0px;
-  padding: 0px;
-}
 
-
-#main-div {
-  width: 500px;
-  height: 500px;
+#container{
+  margin-top: 0;
+  overflow: hidden;
+  position: absolute;
+  height: 100%;
+  width: 50%;
   border: 2px solid red;
-  background: url("./images/backGround.jpg");
+  background-color: lightblue;
+  margin-left:25%;  
 }
 
 
+#birdy {
+  position: absolute;
+  top: 45%;
+  left: 45%;
+  width: 92px;
+  height: 64px;
+  overflow: hidden;
+}
+
+#sprite {
+  position: absolute;
+}
+
+
+#score-display{
+  margin: 0 auto;
+}
+.pipe {
+  position: absolute;
+  width: 100px;
+  height: 100%;
+}
+
+/* I rule out each pipe by default */
+.pipe {
+  left: 15%;
+}
+
+.pipe .up, .pipe .down {
+  position: absolute;
+  background-color: green;
+  width: 100%;
+}
+
+.pipe .up {
+  margin-top:-5px;
+  top: 0;
+  margin-top:0;
+}
+
+.pipe .down {
+  bottom:0;
+  margin-bottom: 0;
+}
