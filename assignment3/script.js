@@ -4,6 +4,8 @@ var sprite = document.getElementById('sprite');
 var spriteStepWidth = 92;
 var spriteSteps     = 2;
 var step            = 0;
+var score           = 0;
+var check           = 1;
 
 var scoreBoard = document.getElementById('score-board');
 
@@ -66,15 +68,22 @@ function touchPipe (pipe) {
   var birdyyDown = birdy.offsetHeight + birdy.offsetTop;
 
   if ( birdyyRight > pipeLeft && birdyyLeft < pipeRight ) {
+
     if (birdyyDown > pipeDown ) {
       window.confirm("Game Over!");}
     if (birdyyUp < pipeUp) {
       window.confirm("Game Over");
     }
+    
+    score++;
+    if(score % 19 == 0 )   scoreBoard.innerHTML=[check++];
+    
   }
-  
+
 
 }
+
+
 
 function animatePipes () {
   
@@ -97,4 +106,4 @@ function animateScene () {
   animatePipes();
 }
 
-var animationInstance =setInterval(animateScene, 40);
+var startGame =setInterval(animateScene, 40);
