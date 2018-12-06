@@ -1,4 +1,3 @@
-
 var birdy = document.getElementById('birdy');
 var sprite = document.getElementById('sprite');
 var spriteStepWidth = 92;
@@ -6,8 +5,16 @@ var spriteSteps     = 2;
 var step            = 0;
 var score           = 0;
 var check           = 1;
-
+var up = false;
 var scoreBoard = document.getElementById('score-board');
+var pipes = document.getElementsByClassName('pipe');
+var pipeWidth = pipes[0].offsetWidth;
+
+
+function Bird(){
+  
+  
+}
 
 function animateSprite () {
   sprite.style.left= -step * spriteStepWidth + 'px';
@@ -19,7 +26,6 @@ function animateSprite () {
   }
 
 }
-var up = false;
 
 document.onkeydown = function (e) {
   if ( e.keyCode == 32 ) {
@@ -42,8 +48,6 @@ function animateFly () {
   }
 
 }
-var pipes = document.getElementsByClassName('pipe');
-var pipeWidth = pipes[0].offsetWidth;
 
 function updateHeight (upPipe, downPipe) {
    var obstacle = 70;
@@ -69,26 +73,15 @@ function touchPipe (pipe) {
 
   if ( birdyyRight > pipeLeft && birdyyLeft < pipeRight ) {
 
-    if (birdyyDown > pipeDown ) {
-      window.confirm("Game Over!");}
-    if (birdyyUp < pipeUp) {
-      window.confirm("Game Over");
-    }
-    
+    if (birdyyDown > pipeDown ) window.confirm("Game Over!");
+    if (birdyyUp < pipeUp) window.confirm("Game Over");
     score++;
     if(score % 19 == 0 )   scoreBoard.innerHTML=[check++];
-    
-  }
-
-
+    }
 }
 
-
-
-function animatePipes () {
-  
+function animatePipes () {  
   Array.prototype.forEach.call( pipes, function (pipe) {
-    
     var left = pipe.offsetLeft;
     pipe.style.left = left - 10 + 'px';
     if (left < -pipeWidth) {
@@ -97,7 +90,6 @@ function animatePipes () {
     }
     touchPipe (pipe);
   });
-
 }
 
 function animateScene () {
