@@ -46,15 +46,12 @@ h1 + p {
 
 button {
    border: none;
-  /* background-color: #FF7373;
-  box-shadow: 0px 5px 0px 0px #CE4646; */
   outline: none;
   border-radius: 5px;
   padding: 10px 15px;
   font-size: 22px;
   text-decoration: none;
   margin: 20px;
-  /* color: #fff; */
   position: relative;
   display: inline-block;
   cursor: pointer;
