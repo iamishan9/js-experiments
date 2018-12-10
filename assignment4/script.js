@@ -106,11 +106,3 @@
 
 		document.addEventListener("keydown", typing, false);
 		
-		function anim(){
-  
-
-			
-			
-			};
-			
-			setInterval(anim,10);
